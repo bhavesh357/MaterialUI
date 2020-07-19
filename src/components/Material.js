@@ -10,6 +10,7 @@ class Material extends React.Component{
             <Content 
                 title="Pricing" 
                 desc="Quickly build an effective pricing table for your potential customers with this layout. It's built with default Material-UI components with little customization."
+                tiles={this.props.tiles}
             />
             </div>
         );

@@ -82,3 +82,14 @@ body{
     font-size: 1.2em;
     color: gray;
 }
+
+.tile-group{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 3em auto 3em auto;
+}
+
+.tile{
+    width: 25%;
+}
