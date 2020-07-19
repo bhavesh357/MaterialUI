@@ -16,7 +16,7 @@ class Tile extends React.Component{
                 <div className="tile-info tile-help">{this.props.tile.help}</div>
                 <div className="tile-info tile-support">{this.props.tile.support}</div>
                 </div>
-                <div className="tile-button">{this.props.tile.button}</div>
+                <button className="tile-button">{this.props.tile.button}</button>
             </div>
         );
     }

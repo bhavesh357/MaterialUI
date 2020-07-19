@@ -84,9 +84,10 @@ body{
 }
 
 .tile-group{
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     margin: 3em auto 3em auto;
 }
 
@@ -138,5 +139,23 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5em 0em;
+    padding: 1em 0em;
+}
+
+.tile-button{    
+    width: 95%;
+    padding: 0.5em 0.5em;
+    background: none;
+    margin: 0.5em 0.5em;
+    border: blue 1px solid;
+    color: blue;
+}
+
+.tile-button:focus{
+    outline: none;
+}
+
+.tile-button:hover{
+    background-color: blue;
+    color: white;
 }
