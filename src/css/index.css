@@ -91,5 +91,29 @@ body{
 }
 
 .tile{
-    width: 25%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: grey 1px 1px 5px 0px;
+}
+
+.tile-title{
+    font-size: 1.75em;
+    width: 100%;
+    background: #eeeeee;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    padding: 0.5em 0em 0em 0em;
+}
+
+.tile-tagline{
+    font-size: 1em;
+    width: 100%;
+    background: #eeeeee;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    padding: 0.5em 0em 1em 0em;
 }
