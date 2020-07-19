@@ -117,3 +117,14 @@ body{
     justify-content: center;
     padding: 0.5em 0em 1em 0em;
 }
+
+.tile-price{
+    display: flex;
+    text-align: end;
+    align-items: baseline;
+}
+
+.price{
+    font-size: 2em;
+    padding: 0.5em 0em;
+}
