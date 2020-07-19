@@ -10,10 +10,12 @@ class Tile extends React.Component{
                 <div className="tile-price">
                     <div className="price">${this.props.tile.price}</div>/mo
                 </div>
-                <div className="tile-users">{this.props.tile.users}</div>
-                <div className="tile-storage">{this.props.tile.storage}</div>
-                <div className="tile-help">{this.props.tile.help}</div>
-                <div className="tile-support">{this.props.tile.support}</div>
+                <div className="tile-info-list">
+                <div className="tile-info tile-users">{this.props.tile.users} users included</div>
+                <div className="tile-info tile-storage">{this.props.tile.storage} GB of storage</div>
+                <div className="tile-info tile-help">{this.props.tile.help}</div>
+                <div className="tile-info tile-support">{this.props.tile.support}</div>
+                </div>
                 <div className="tile-button">{this.props.tile.button}</div>
             </div>
         );

@@ -84,7 +84,7 @@ body{
 }
 
 .tile-group{
-    width: 80%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     margin: 3em auto 3em auto;
@@ -92,6 +92,7 @@ body{
 
 .tile{
     width: 30%;
+    height: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,5 +127,16 @@ body{
 
 .price{
     font-size: 2em;
-    padding: 0.5em 0em;
+    padding-top: 0.5em;
+}
+
+.tile-info{
+    padding: 0.2em 0em;
+}
+
+.tile-info-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5em 0em;
 }
