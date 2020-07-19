@@ -3,7 +3,11 @@ import React from 'react';
 class LoginButton extends React.Component{
     render() {
         return(
-            <button className="navbar-button" >Login</button>
+            <button className="navbar-button login-button" >
+                <div id="login" >
+                    LOGIN
+                </div>
+            </button>
         );
     }
 }
