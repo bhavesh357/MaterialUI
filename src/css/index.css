@@ -382,10 +382,24 @@ body{
     
 }
 
+#new-user-form-button{
+    color: white;
+    background-color: #1976d2;
+    font-size: 1.5em;
+    padding: 0em 1em;
+    margin: 0em 0em;
+    border-radius: 0.2em;
+}
+
+#new-user-form-row{
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 #new-user-div{
     display: block;
-    width: 80%;
+    width: 70%;
     transition: visibility 0s, opacity 0.5s linear;
 }
 
@@ -536,5 +550,12 @@ body{
 }
 .option.list-column:focus{
     outline: none;
+}
+.new-user-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    border: #dddddd 1px solid;
 }
 

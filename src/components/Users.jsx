@@ -17,70 +17,72 @@ class Users extends React.Component{
     render(){
         var newUserToggle=this.state.isAddingUser? <div id="new-user-div">
         <div class="new-user-row">
-            <div class="new-user-column">
-                <label class="new-user-label">Enter Name : </label>
-            </div>
-            <div class="new-user-input-column">
-                <input id="new-name" type="text" />
-            </div>
+        <div class="new-user-column">
+        <label class="new-user-label">Enter Name : </label>
+        </div>
+        <div class="new-user-input-column">
+        <input id="new-name" type="text" />
+        </div>
         </div>
         <div class="new-user-row">
-            <div class="new-user-column">
-                <label class="new-user-label">Enter Email : </label>
-            </div>
-            <div class="new-user-input-column">
-                <input id="new-email" type="text"/>
-            </div>
+        <div class="new-user-column">
+        <label class="new-user-label">Enter Email : </label>
+        </div>
+        <div class="new-user-input-column">
+        <input id="new-email" type="text"/>
+        </div>
         </div>
         <div class="new-user-row">
-            <div class="new-user-column">
-                <label class="new-user-label">Enter Status : </label>
-            </div>
-            <div class="new-user-input-column">
-                <select name="status" id="new-status">
-                    <option value="Active">Active</option>
-                    <option value="Inactive">Inactive</option>
-                </select>
-                <br/>
-            </div>
+        <div class="new-user-column">
+        <label class="new-user-label">Enter Status : </label>
+        </div>
+        <div class="new-user-input-column">
+        <select name="status" id="new-status">
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+        </select>
+        <br/>
+        </div>
         </div>
         <div class="new-user-row">
-            <div class="new-user-column">
-                <label class="new-user-label">Enter Role : </label>
-            </div>
-            <div class="new-user-input-column">
-                <select name="status" id="new-role">
-                    <option value="User">User</option>
-                    <option value="Administrator">Administrator</option>
-                </select>
-            </div>
+        <div class="new-user-column">
+        <label class="new-user-label">Enter Role : </label>
+        </div>
+        <div class="new-user-input-column">
+        <select name="status" id="new-role">
+        <option value="User">User</option>
+        <option value="Administrator">Administrator</option>
+        </select>
+        </div>
         </div>
         <div class="new-user-row">
-            <div class="new-user-column">
-                <label class="new-user-label">Enter Last Login : </label>
-            </div>
-            <div class="new-user-input-column">
-                <input id="last-login" type="number" />
-            </div>
+        <div class="new-user-column">
+        <label class="new-user-label">Enter Last Login : </label>
+        </div>
+        <div class="new-user-input-column">
+        <input id="last-login" type="number" />
+        </div>
         </div>
         <div class="new-user-row">
-            <div class="new-user-column">
-                <label class="new-user-label">Enter Permission : </label>
-            </div>
-            <div class="new-user-input-column">
-                <select name="status" id="new-permission">
-                    <option value="Valid">Valid</option>
-                    <option value="Invalid">Invalid</option>
-                </select>
-            </div>
+        <div class="new-user-column">
+        <label class="new-user-label">Enter Permission : </label>
         </div>
-        <div class="new-user-row">
-            <div class="new-user-column">
-                <button onclick="addUser()">Add</button>
-            </div>
+        <div class="new-user-input-column">
+        <select name="status" id="new-permission">
+        <option value="Valid">Valid</option>
+        <option value="Invalid">Invalid</option>
+        </select>
         </div>
-    </div>
-    : "";
+        </div>
+        <div id="new-user-form-row" class="new-user-row">
+        <div class="new-user-column">
+        <button id="new-user-form-button" onclick="addUser()">Add</button>
+        </div>
+        </div>
+        </div>
+        : <div id="new-user-div">
+        
+        </div>;
         var userList= this.props.userList.map(user => {
             var status=user.status===("Active") ? <button onclick="toggleStatus(1)" class="status-button status-active">{user.status}</button>:<button onclick="toggleStatus(1)" class="status-button status-inactive">{user.status}</button>;
             return (
@@ -102,9 +104,7 @@ class Users extends React.Component{
                 <h2 id="user-count">Users(20)</h2>
                 <button onClick={() => this.addNewUser()} id="add-user-button">+ ADD NEW</button>
                 </div>
-                <div id="new-user-div">
-                    {newUserToggle}
-                </div>
+                {newUserToggle}
                 <div id="user-search">
                 <div id="user-search-placeholder">
                 <input oninput="search()" id="user-search-mini" class="user-search-placeholder-text" type="text" placeholder="Search UserName,Email,Status,Role"/>
