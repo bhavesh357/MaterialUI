@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&display=swap');
+@import './flaticon.css';
 
 body{
     margin: 0;
@@ -300,14 +301,14 @@ body{
 
 #add-user-button{
     color: white;
-    background-color: #6629ea;
+    background-color: #1976d2;
     font-size: 0.75em;
     padding: 0em 1.75em;
     margin: 1.25em 0em;
     border-radius: 0.2em;
 }
 #add-user-button:hover{
-    background-color: #6629ff;
+    background-color: #1976ff;
 }
 #add-user-button:focus{
     outline: none;
@@ -507,6 +508,9 @@ body{
 }
 .status-button{
     padding-left: 0.5em;
+}
+.status-button:focus {
+    outline: none;
 }
 .role{
     min-width: 10%;
