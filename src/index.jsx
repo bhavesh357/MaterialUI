@@ -31,11 +31,25 @@ var tiles=[{
     support: "Phone & Email support",
     button: "CONTACT US"
 }]
+
+var footer=[{
+    title: "Company",
+    subMenu: ["Team","History","Contact Us","Location"]
+},{
+    title: "Features",
+    subMenu: ["Cool stuff","Random feature","Team feature","Developer Stuff","Another One"]
+},{
+    title: "Resource",
+    subMenu: ["Resource","Resource name","Another resource","Final Resource"]
+},{
+    title: "Legal",
+    subMenu: ["Privacy policy","Terms of use"]
+}];
     
     // ========================================
     
     ReactDOM.render(
-        <Material tiles={tiles} />,
+        <Material tiles={tiles} footerMenu={footer}/>,
         document.getElementById('root')
         );
         
