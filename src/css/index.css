@@ -49,6 +49,12 @@ body{
     padding: 0.5em 0em;
 }
 
+#logout{
+    border: red 1px solid;
+    color: red;
+    padding: 0.5em 0em;
+}
+
 .navbar-left{
     width: 50%;
 }

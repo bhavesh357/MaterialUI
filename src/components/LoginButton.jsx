@@ -1,15 +1,29 @@
 import React from 'react';
 
 class LoginButton extends React.Component{
-    render() {
-        return(
-            <button className="navbar-button login-button" >
-                <div id="login" >
-                    LOGIN
-                </div>
-            </button>
-        );
+    constructor(props){
+        super(props);
+        this.state={ isLoggedIn: false};
     }
-}
 
-export default LoginButton;
+    handleClick(){
+        this.setState({ isLoggedIn: !this.state.isLoggedIn});
+    }
+    
+    render() {
+        var logButton= this.state.isLoggedIn? 
+        <div id="logout" >
+        LOGOUT
+        </div>:
+        <div id="login" >
+        LOGIN
+        </div>
+        return(
+            <button onClick={() => this.handleClick()} className="navbar-button login-button" >
+            {logButton}
+            </button>
+            );
+        }
+    }
+    
+    export default LoginButton;
