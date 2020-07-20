@@ -2,6 +2,120 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
 import Material from './components/Material';
+var users=[
+    {
+        id:1,
+        name: "Bhavesh Kadam",
+        email:"bkadam357@gmail.com",
+        status:"Active",
+        role:"Administrator",
+        lastLogin:"2d ago",
+        permission:"Valid"
+    },{
+        id:2,
+        name: "Bhavesh Kale",
+        email:"bkadam357@gmail.com",
+        status:"Inactive",
+        role:"User",
+        lastLogin:"3d ago",
+        permission:"Valid"
+    },{
+        id:3,
+        name: "Bhavesh Kadam",
+        email:"bkadam357@gmail.com",
+        status:"Active",
+        role:"Administrator",
+        lastLogin:"2d ago",
+        permission:"Valid"
+    },{
+        id:4,
+        name: "Bhavesh Kale",
+        email:"bkadam357@gmail.com",
+        status:"Inactive",
+        role:"User",
+        lastLogin:"3d ago",
+        permission:"Valid"
+    },{
+        id:5,
+        name: "Bhavesh Kadam",
+        email:"bkadam357@gmail.com",
+        status:"Active",
+        role:"Administrator",
+        lastLogin:"2d ago",
+        permission:"Valid"
+    },{
+        id:6,
+        name: "Bhavesh Kale",
+        email:"bkadam357@gmail.com",
+        status:"Inactive",
+        role:"User",
+        lastLogin:"3d ago",
+        permission:"Valid"
+    },{
+        id:7,
+        name: "Bhavesh Kadam",
+        email:"bkadam357@gmail.com",
+        status:"Active",
+        role:"Administrator",
+        lastLogin:"2d ago",
+        permission:"Valid"
+    },{
+        id:8,
+        name: "Bhavesh Kale",
+        email:"bkadam357@gmail.com",
+        status:"Inactive",
+        role:"User",
+        lastLogin:"3d ago",
+        permission:"Valid"
+    },{
+        id:9,
+        name: "Bhavesh Kadam",
+        email:"bkadam357@gmail.com",
+        status:"Active",
+        role:"Administrator",
+        lastLogin:"2d ago",
+        permission:"Valid"
+    },{
+        id:10,
+        name: "Bhavesh Kale",
+        email:"bkadam357@gmail.com",
+        status:"Inactive",
+        role:"User",
+        lastLogin:"3d ago",
+        permission:"Valid"
+    },{
+        id:11,
+        name: "Bhavesh Kadam",
+        email:"bkadam357@gmail.com",
+        status:"Active",
+        role:"Administrator",
+        lastLogin:"2d ago",
+        permission:"Valid"
+    },{
+        id:12,
+        name: "Bhavesh Kale",
+        email:"bkadam357@gmail.com",
+        status:"Inactive",
+        role:"User",
+        lastLogin:"3d ago",
+        permission:"Valid"
+    },{
+        id:13,
+        name: "Bhavesh Kadam",
+        email:"bkadam357@gmail.com",
+        status:"Active",
+        role:"Administrator",
+        lastLogin:"2d ago",
+        permission:"Valid"
+    },{
+        id:14,
+        name: "Bhavesh Kale",
+        email:"bkadam357@gmail.com",
+        status:"Inactive",
+        role:"User",
+        lastLogin:"3d ago",
+        permission:"Valid"
+    }];
 
 var tiles=[{
     plan: "Free",
@@ -51,7 +165,7 @@ var navbarButtons=["FEATURES","ENTERPRISE","SUPPORT"];
     // ========================================
     
     ReactDOM.render(
-        <Material tiles={tiles} footerMenu={footer} navbarButtons={navbarButtons}/>,
+        <Material tiles={tiles} footerMenu={footer} navbarButtons={navbarButtons} userList={users}/>,
         document.getElementById('root')
         );
         

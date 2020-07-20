@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
+import Users from './Users';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 
 class Material extends React.Component{
@@ -15,6 +16,10 @@ class Material extends React.Component{
                         title="Pricing" 
                         desc="Quickly build an effective pricing table for your potential customers with this layout. It's built with default Material-UI components with little customization."
                         tiles={this.props.tiles}
+                    />}>
+                </Route>
+                <Route path="/users" exact render={() => <Users 
+                        userList={this.props.userList}
                     />}>
                 </Route>
             </Switch>

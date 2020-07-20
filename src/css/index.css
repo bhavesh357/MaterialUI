@@ -24,6 +24,16 @@ body{
     font-weight: bold;
 }
 
+.navbar-title-link{
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar-title-link:hover{
+    color: #1976d2 ;
+    
+}
+
 .navbar-button{
     height: 100%;
     width: 8em;
@@ -223,3 +233,304 @@ body{
     color: lightgray;
     font-size: 0.8em;
 }
+
+/* code from previous project */
+
+#list{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#search-bar{
+    background-color: white;
+    padding: 0.5em 1.5em;
+    box-shadow:10px 5px 15px 10px lightgrey ; 
+    position: fixed;
+    max-width: 100%;
+    width: 82%;
+}
+
+#search-field{
+    background-color: white;
+    border: #dddddd 1px solid;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.2em;
+}
+
+#search-placeholder{
+    padding: 0.5em 1em;
+    color: gray;
+    width: 100%;
+}
+
+#search-button{
+    background-color: #dee6e9;
+    padding: 0.25em 1.75em 0.35em 1.75em;
+    margin: .2em 0.2em;
+    color: black;
+    border: none;
+    border-radius: 0.2em;
+}
+
+#search-button:hover{
+    background-color: #6e4bd3;
+    color: white;
+}
+
+
+#user-list{
+    background-color: white;
+    margin: 5em auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    display: block;
+    border: #dddddd 1px solid;
+    box-shadow: 5px 5px 20px 5px #dddddd;
+    width: 80%;
+}
+
+#user-number{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#add-user-button{
+    color: white;
+    background-color: #6629ea;
+    font-size: 0.75em;
+    padding: 0em 1.75em;
+    margin: 1.25em 0em;
+    border-radius: 0.2em;
+}
+#add-user-button:hover{
+    background-color: #6629ff;
+}
+#add-user-button:focus{
+    outline: none;
+}
+
+#bg-modal{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0,0.7);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal-close{
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    font-size: 1.5em;
+    width: 40px;
+    background: none;
+    border: none;
+}
+
+#modal-close:focus{
+    outline: none;
+}
+#modal-close:hover{
+    top:4.5%;
+    color: #6e4bd3;
+}
+
+#new-error-message{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+.modal-new-user{
+    width: 525px;
+    height: 425px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 5%;
+}
+
+#modal-header{
+    display: flex;
+    justify-content: center;
+}
+
+#pop-up-add{
+    
+    position: relative;
+    left: 83%;
+    padding: 0.5em 1em;
+    margin: 1em 0em;
+}
+#pop-up-add:hover{
+    background-color: #6e4bd3;
+    border-color: #6e4bd3;
+}
+#pop-up-add:focus{
+    outline: none;
+    
+}
+
+
+#new-user-div{
+    display: block;
+    width: 80%;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.new-user-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.75em 1em;
+}
+
+#user-search{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em 0em;
+    border: #dddddd 1px solid;
+}
+.user-search-placeholder-text{
+    width: 100%;
+    font-size: 1em;
+    border: none;
+}
+
+.user-search-placeholder-text:focus{
+    outline:none;
+}
+
+#user-search-alt{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em 0em;
+}
+
+#user-search-placeholder{
+    padding: 0.5em 0.5em;
+    color: gray;
+    width: 100%;
+}
+
+#user-search-button{
+    background-color:white  ;
+    padding: 0.25em 0.75em 0.35em 1.5em;
+    margin: 0.2em 0.2em;
+    color: black;
+    border: none;
+    border-radius: 0.2em;
+}
+#user-search-button:hover{
+    background-color: #6e4bd3;
+    color: white;
+}
+#user-search-button:focus{
+    outline: none;
+}
+#user-search-button:active{
+    position: relative;
+    top:1px;
+}
+
+.user-list-icon{
+    height: 15px;
+    width: 15px;
+    padding-right: 0.5em;
+}
+
+#user-list-details{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    min-width: 100%;
+    border-bottom: #dddddd 1px solid;
+}
+.user-list-head{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1em;
+}
+
+.user-list-item{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em 0em;
+    border-right: #dddddd 1px solid;
+    border-left: #dddddd 1px solid;
+    border-top: #dddddd 1px solid;
+}
+
+.no-user-list-item{
+    padding: 0.5em 0em;
+    border-right: #dddddd 1px solid;
+    border-left: #dddddd 1px solid;
+    border-top: #dddddd 1px solid;
+    display: flex;
+    justify-content: center;
+}
+
+.list-column{
+    padding-left: 1em;
+}
+.name{
+    min-width: 20%;
+}
+.email{
+    min-width: 20%;
+}
+.status{
+    min-width: 10%;
+}
+
+.status-active{
+    width: 50%;
+    color: green;
+    border: green 1px solid;
+}
+
+.status-inactive{
+    width: 60%;
+    color: gray;
+    border: gray 1px solid;
+}
+.status-button{
+    padding-left: 0.5em;
+}
+.role{
+    min-width: 10%;
+}
+.last-login{
+    min-width: 10%;
+}
+.permission{
+    min-width: 10%;
+}
+.option{
+    justify-content: flex-end;
+    font-size: 1em;
+    min-width: 10%;
+    text-align: center;
+}
+
+.option.list-column{
+    background-color: white;
+    border: none;
+    font-weight: bold ;
+    
+}
+.option.list-column:focus{
+    outline: none;
+}
+
