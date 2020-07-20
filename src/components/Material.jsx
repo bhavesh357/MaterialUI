@@ -7,7 +7,7 @@ class Material extends React.Component{
     render() {
         return (
             <div id="container">
-            <Header />
+            <Header navbarButtons={this.props.navbarButtons}/>
             <Content 
                 title="Pricing" 
                 desc="Quickly build an effective pricing table for your potential customers with this layout. It's built with default Material-UI components with little customization."

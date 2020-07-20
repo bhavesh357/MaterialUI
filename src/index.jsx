@@ -45,11 +45,13 @@ var footer=[{
     title: "Legal",
     subMenu: ["Privacy policy","Terms of use"]
 }];
+
+var navbarButtons=["FEATURES","ENTERPRISE","SUPPORT"];
     
     // ========================================
     
     ReactDOM.render(
-        <Material tiles={tiles} footerMenu={footer}/>,
+        <Material tiles={tiles} footerMenu={footer} navbarButtons={navbarButtons}/>,
         document.getElementById('root')
         );
         
