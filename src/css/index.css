@@ -40,12 +40,12 @@ body{
 }
 
 .navbar-button:hover{
-    color: blue;
+    color: #1976d2;
 }
 
 #login{
-    border: blue 1px solid;
-    color: blue;
+    border: #1976d2 1px solid;
+    color: #1976d2;
     padding: 0.5em 0em;
 }
 
@@ -150,8 +150,8 @@ body{
     padding: 0.5em 0.5em;
     background: none;
     margin: 0.5em 0.5em;
-    border: blue 1px solid;
-    color: blue;
+    border: #1976d2 1px solid;
+    color: #1976d2;
 }
 
 .tile-button:focus{
@@ -159,12 +159,19 @@ body{
 }
 
 .tile-button:hover{
-    background-color: blue;
+    background-color: #1976d2;
     color: white;
 }
 
 .footer{
-    width: 60%;
+    width: 75%;
+    margin:auto;
+    border-top: lightgray 1px solid;
+    padding: 3em 0em;
+}
+
+.footer-options{
+    width: 80%;
     display: flex;
     align-items: flex-start;
     margin: auto;
@@ -185,4 +192,28 @@ body{
     align-items: flex-start;
     background: none;
     padding: 1em 0em;
+}
+
+.footer-menu-submenu-button{
+    background: none;
+    border: none;
+    color: #7d7d7d;
+    padding: 0.35em 0em;
+    cursor: pointer;
+}
+
+.footer-menu-submenu-button:focus{
+    outline: none;
+}
+
+.footer-menu-submenu-button:hover{
+    color: black;
+}
+
+.footer-info{    
+    display: flex;
+    justify-content: center;
+    padding: 2em 0em;
+    color: lightgray;
+    font-size: 0.8em;
 }

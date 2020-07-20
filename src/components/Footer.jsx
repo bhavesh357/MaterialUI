@@ -12,7 +12,12 @@ class Footer extends React.Component{
 
         return(
             <div class="footer">
-                {footerMenu}
+                <div className="footer-options">
+                    {footerMenu}
+                </div>
+                <div className="footer-info">
+                    Copyright @ Your Website 2020.
+                </div>
             </div>
         );
     }
