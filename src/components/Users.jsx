@@ -55,6 +55,10 @@ class Users extends React.Component{
         }
         
     }
+
+    componentDidMount(){
+        console.log("Userlist is shown");
+    }
     
 
     toggleStatus(idNumber){
