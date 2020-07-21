@@ -32,6 +32,24 @@ class Users extends React.Component{
         document.getElementById("new-error-message").innerHTML=error;
         return false;
     }
+
+    toggleStatus(idNumber){
+        var users = this.state.usersList;
+        for(let i=0;users.length>i;i++){
+            if(users[i].id===idNumber){
+                console.log(users[i]);
+                if(users[i].status.localeCompare("Active")===0){
+                    users[i].status="Inactive";
+                }else{
+                    users[i].status="Active";
+                }
+                console.log(users[i]);
+            }
+        }
+        this.setState({
+            userList: users,
+        });
+    }
     
     addNewUser(){
         var validationFlag = () => {};
@@ -136,7 +154,7 @@ class Users extends React.Component{
                 <div key={user.id} className="user-list-item">
                 <div className="name list-column"><i className="flaticon-user"></i>{user.name}</div>
                 <div className="email list-column">{user.email}</div>
-                <div className="status list-column">{status}</div>
+                <div onClick={() => this.toggleStatus(user.id)} className="status list-column">{status}</div>
                 <div className="role list-column">{user.role}</div>
                 <div className="last-login list-column">{user.lastLogin}</div>
                 <div className="permission list-column">{user.permission}</div>
