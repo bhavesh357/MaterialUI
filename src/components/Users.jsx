@@ -15,27 +15,54 @@ class Users extends React.Component{
         });
     }
 
-    addNewUser(){
-        var User={
-            id:this.state.usersList.length+1,
-            name: document.getElementById("new-name").value,
-            email:document.getElementById("new-email").value,
-            status:document.getElementById("new-status").value,
-            role:document.getElementById("new-role").value,
-            lastLogin:document.getElementById("last-login").value+"d ago",
-            permission:document.getElementById("new-permission").value
+    validateForm(){
+        var nameRegex = /([A-Z]{1}[a-z]{1,10} [A-Z]{1}[a-z]{1,10})\w+/;
+        var emailRegex =/[\w\d]{1,}[.\-#!]?[\w\d]{1,}@[\w\d]{1,}.[a-z]{2,3}.?([a-z]{2})?/;
+        var error="";
+        if(document.getElementById("last-login").value<0){
+            error="Enter positive last Login day";
+        }else if(emailRegex.test(document.getElementById("new-email").value)===false){
+            error="Enter proper email id";
+        }else if(nameRegex.test(document.getElementById("new-name").value)===false){
+            error="Enter proper name";
         }
-        var newList=this.props.userList;
-        console.log(newList);
-        newList.push(User);
-        console.log(newList);
-        this.setState({
-            usersList: newList
-        });
+        if(error.length===0){
+            return true;
+        }
+        document.getElementById("new-error-message").innerHTML=error;
+        return false;
+    }
+    
+    addNewUser(){
+        var validationFlag = () => {};
+        console.log(this.validateForm());
+        if(validationFlag){
+            var User={
+                id:this.state.usersList.length+1,
+                name: document.getElementById("new-name").value,
+                email:document.getElementById("new-email").value,
+                status:document.getElementById("new-status").value,
+                role:document.getElementById("new-role").value,
+                lastLogin:document.getElementById("last-login").value+"d ago",
+                permission:document.getElementById("new-permission").value
+            }
+            var newList=this.props.userList;
+            console.log(newList);
+            newList.push(User);
+            console.log(newList);
+            this.setState({
+                usersList: newList
+            });
+        }
     }
     
     render(){
         var newUserToggle=this.state.isAddingUser? <div id="new-user-div">
+        <div className="error-row new-user-row ">
+        <div className="new-user-column">
+        <label id="new-error-message"></label>
+        </div>
+        </div>
         <div className="new-user-row">
         <div className="new-user-column">
         <label className="new-user-label">Enter Name : </label>
