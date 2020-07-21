@@ -148,7 +148,7 @@ class Users extends React.Component{
                 <div id="list">
                 <div id="user-list">
                 <div id="user-number">
-                <h2 id="user-count">Users(20)</h2>
+                <h2 id="user-count">Users({this.state.usersList.length})</h2>
                 <button onClick={() => this.addNewUserToggle()} id="add-user-button">+ ADD NEW</button>
                 </div>
                 {newUserToggle}
