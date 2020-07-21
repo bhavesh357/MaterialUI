@@ -6,14 +6,14 @@ class FooterSubMenu extends React.Component{
 
         var footerSubMenu= this.props.subFooterMenu.subMenu.map(Element => {
             return(
-                <button className="footer-menu-submenu-button">
+                <button key={Element} className="footer-menu-submenu-button">
                     {Element}
                 </button>
             );
         })
         return(
-            <div class="footer-menu">
-                <div class="footer-menu-title">
+            <div className="footer-menu">
+                <div className="footer-menu-title">
                     {this.props.subFooterMenu.title}
                 </div>
                 <div className="footer-menu-submenu">

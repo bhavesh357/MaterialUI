@@ -9,7 +9,7 @@ class Content extends React.Component{
             <div className="content-header" >{this.props.title}</div>
             <div className="content-desc">{this.props.desc}</div>
             </div>
-            <div class="tile-group">    
+            <div className="tile-group">    
                 <TilesGroup tiles={this.props.tiles} />
             </div>
             </div>

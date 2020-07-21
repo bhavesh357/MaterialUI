@@ -9,7 +9,7 @@ class Header extends React.Component{
     render() {
         var navbarMenu= this.props.navbarButtons.map(button => {
             return (
-                <NavbarButton value={button}/>
+                <NavbarButton key={button} value={button}/>
                 );
             })
             return (

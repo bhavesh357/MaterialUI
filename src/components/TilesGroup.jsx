@@ -5,7 +5,7 @@ class TilesGroup extends React.Component{
     render() {
         var tileList=this.props.tiles.map(tile => {
             return(
-                <Tile tile={tile} />
+                <Tile key={tile.plan} tile={tile} />
                 ) 
             });
             return (tileList);

@@ -6,12 +6,12 @@ class Footer extends React.Component{
     render(){
         var footerMenu= this.props.footerMenu.map(menu => {
             return (
-                <FooterSubMenu subFooterMenu={menu}/>
+                <FooterSubMenu key={menu.title} subFooterMenu={menu}/>
             );
         })
 
         return(
-            <div class="footer">
+            <div className="footer">
                 <div className="footer-options">
                     {footerMenu}
                 </div>
