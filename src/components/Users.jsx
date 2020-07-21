@@ -6,6 +6,7 @@ class Users extends React.Component{
         this.state=({
             isAddingUser: false,
             usersList: this.props.userList,
+            updatedUsersList: this.props.userList,
         });
     }
     
@@ -32,6 +33,29 @@ class Users extends React.Component{
         document.getElementById("new-error-message").innerHTML=error;
         return false;
     }
+
+    isSimilar(element,word){
+        return element.name.toLowerCase().indexOf(word)>-1 || element.email.toLowerCase().indexOf(word)>-1 || element.status.toLowerCase().indexOf(word)===0 || element.role.toLowerCase().indexOf(word)>-1 
+    }
+    
+    search(){
+        var word=document.getElementById("user-search-mini").value.toLowerCase();
+        console.log(word);
+        if(word.trim()===""){
+            this.setState({
+                usersList:this.state.updatedUsersList,
+            });
+        }else{
+            var searchUsers=this.state.usersList;
+            var filteredList=searchUsers.filter(element => this.isSimilar(element,word));
+            console.log(filteredList);
+            this.setState({
+                usersList:filteredList,
+            });
+        }
+        
+    }
+    
 
     toggleStatus(idNumber){
         var users = this.state.usersList;
@@ -64,12 +88,11 @@ class Users extends React.Component{
                 lastLogin:document.getElementById("last-login").value+"d ago",
                 permission:document.getElementById("new-permission").value
             }
-            var newList=this.props.userList;
-            console.log(newList);
+            var newList=this.state.usersList;
             newList.push(User);
-            console.log(newList);
             this.setState({
-                usersList: newList
+                usersList: newList,
+                updatedUsersList: newList,
             });
         }
     }
@@ -161,6 +184,8 @@ class Users extends React.Component{
                 <button className="option list-column">...</button>
                 </div>);
             })
+
+            console.log("rendering");
             
             return(
                 <div id="list">
@@ -172,9 +197,9 @@ class Users extends React.Component{
                 {newUserToggle}
                 <div id="user-search">
                 <div id="user-search-placeholder">
-                <input onInput={()=>{console.log("search()")}} id="user-search-mini" className="user-search-placeholder-text" type="text" placeholder="Search UserName,Email,Status,Role"/>
+                <input onInput={()=>{this.search()}} id="user-search-mini" className="user-search-placeholder-text" type="text" placeholder="Search UserName,Email,Status,Role"/>
                 </div>
-                <button onClick={() => {console.log("search");}} id="user-search-button"><i className="small-search-button flaticon-search"></i></button>
+                <button onClick={() => {this.search()}} id="user-search-button"><i className="small-search-button flaticon-search"></i></button>
                 </div>
                 
                 <div id="user-list-details">
