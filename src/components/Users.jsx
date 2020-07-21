@@ -76,9 +76,7 @@ class Users extends React.Component{
     }
     
     addNewUser(){
-        var validationFlag = () => {};
-        console.log(this.validateForm());
-        if(validationFlag){
+        if(this.validateForm()){
             var User={
                 id:this.state.usersList.length+1,
                 name: document.getElementById("new-name").value,
