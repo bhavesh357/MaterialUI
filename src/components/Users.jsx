@@ -5,38 +5,58 @@ class Users extends React.Component{
         super(props);
         this.state=({
             isAddingUser: false,
+            usersList: this.props.userList,
         });
     }
     
-    addNewUser(){
+    addNewUserToggle(){
         this.setState({
             isAddingUser: !this.state.isAddingUser,
+        });
+    }
+
+    addNewUser(){
+        var User={
+            id:this.state.usersList.length+1,
+            name: document.getElementById("new-name").value,
+            email:document.getElementById("new-email").value,
+            status:document.getElementById("new-status").value,
+            role:document.getElementById("new-role").value,
+            lastLogin:document.getElementById("last-login").value+"d ago",
+            permission:document.getElementById("new-permission").value
+        }
+        var newList=this.props.userList;
+        console.log(newList);
+        newList.push(User);
+        console.log(newList);
+        this.setState({
+            usersList: newList
         });
     }
     
     render(){
         var newUserToggle=this.state.isAddingUser? <div id="new-user-div">
-        <div class="new-user-row">
-        <div class="new-user-column">
-        <label class="new-user-label">Enter Name : </label>
+        <div className="new-user-row">
+        <div className="new-user-column">
+        <label className="new-user-label">Enter Name : </label>
         </div>
-        <div class="new-user-input-column">
+        <div className="new-user-input-column">
         <input id="new-name" type="text" />
         </div>
         </div>
-        <div class="new-user-row">
-        <div class="new-user-column">
-        <label class="new-user-label">Enter Email : </label>
+        <div className="new-user-row">
+        <div className="new-user-column">
+        <label className="new-user-label">Enter Email : </label>
         </div>
-        <div class="new-user-input-column">
+        <div className="new-user-input-column">
         <input id="new-email" type="text"/>
         </div>
         </div>
-        <div class="new-user-row">
-        <div class="new-user-column">
-        <label class="new-user-label">Enter Status : </label>
+        <div className="new-user-row">
+        <div className="new-user-column">
+        <label className="new-user-label">Enter Status : </label>
         </div>
-        <div class="new-user-input-column">
+        <div className="new-user-input-column">
         <select name="status" id="new-status">
         <option value="Active">Active</option>
         <option value="Inactive">Inactive</option>
@@ -44,39 +64,39 @@ class Users extends React.Component{
         <br/>
         </div>
         </div>
-        <div class="new-user-row">
-        <div class="new-user-column">
-        <label class="new-user-label">Enter Role : </label>
+        <div className="new-user-row">
+        <div className="new-user-column">
+        <label className="new-user-label">Enter Role : </label>
         </div>
-        <div class="new-user-input-column">
+        <div className="new-user-input-column">
         <select name="status" id="new-role">
         <option value="User">User</option>
         <option value="Administrator">Administrator</option>
         </select>
         </div>
         </div>
-        <div class="new-user-row">
-        <div class="new-user-column">
-        <label class="new-user-label">Enter Last Login : </label>
+        <div className="new-user-row">
+        <div className="new-user-column">
+        <label className="new-user-label">Enter Last Login : </label>
         </div>
-        <div class="new-user-input-column">
+        <div className="new-user-input-column">
         <input id="last-login" type="number" />
         </div>
         </div>
-        <div class="new-user-row">
-        <div class="new-user-column">
-        <label class="new-user-label">Enter Permission : </label>
+        <div className="new-user-row">
+        <div className="new-user-column">
+        <label className="new-user-label">Enter Permission : </label>
         </div>
-        <div class="new-user-input-column">
+        <div className="new-user-input-column">
         <select name="status" id="new-permission">
         <option value="Valid">Valid</option>
         <option value="Invalid">Invalid</option>
         </select>
         </div>
         </div>
-        <div id="new-user-form-row" class="new-user-row">
-        <div class="new-user-column">
-        <button id="new-user-form-button" onclick="addUser()">Add</button>
+        <div id="new-user-form-row" className="new-user-row">
+        <div className="new-user-column">
+        <button id="new-user-form-button" onClick={() => this.addNewUser()}>Add</button>
         </div>
         </div>
         </div>
@@ -84,16 +104,16 @@ class Users extends React.Component{
         
         </div>;
         var userList= this.props.userList.map(user => {
-            var status=user.status===("Active") ? <button onclick="toggleStatus(1)" class="status-button status-active">{user.status}</button>:<button onclick="toggleStatus(1)" class="status-button status-inactive">{user.status}</button>;
+            var status=user.status===("Active") ? <button onClick={() => {console.log("toggleStatus");} } className="status-button status-active">{user.status}</button>:<button onClick={() => {console.log("toggleStatus(i)");}} className="status-button status-inactive">{user.status}</button>;
             return (
-                <div class="user-list-item">
-                <div class="name list-column"><i class="flaticon-user"></i>{user.name}</div>
-                <div class="email list-column">{user.email}</div>
-                <div class="status list-column">{status}</div>
-                <div class="role list-column">{user.role}</div>
-                <div class="last-login list-column">{user.lastLogin}</div>
-                <div class="permission list-column">{user.permission}</div>
-                <button class="option list-column">...</button>
+                <div key={user.id} className="user-list-item">
+                <div className="name list-column"><i className="flaticon-user"></i>{user.name}</div>
+                <div className="email list-column">{user.email}</div>
+                <div className="status list-column">{status}</div>
+                <div className="role list-column">{user.role}</div>
+                <div className="last-login list-column">{user.lastLogin}</div>
+                <div className="permission list-column">{user.permission}</div>
+                <button className="option list-column">...</button>
                 </div>);
             })
             
@@ -102,25 +122,25 @@ class Users extends React.Component{
                 <div id="user-list">
                 <div id="user-number">
                 <h2 id="user-count">Users(20)</h2>
-                <button onClick={() => this.addNewUser()} id="add-user-button">+ ADD NEW</button>
+                <button onClick={() => this.addNewUserToggle()} id="add-user-button">+ ADD NEW</button>
                 </div>
                 {newUserToggle}
                 <div id="user-search">
                 <div id="user-search-placeholder">
-                <input oninput="search()" id="user-search-mini" class="user-search-placeholder-text" type="text" placeholder="Search UserName,Email,Status,Role"/>
+                <input onInput={()=>{console.log("search()")}} id="user-search-mini" className="user-search-placeholder-text" type="text" placeholder="Search UserName,Email,Status,Role"/>
                 </div>
-                <button onclick="search()" id="user-search-button"><i class="small-search-button flaticon-search"></i></button>
+                <button onClick={() => {console.log("search");}} id="user-search-button"><i className="small-search-button flaticon-search"></i></button>
                 </div>
                 
                 <div id="user-list-details">
-                <div class="user-list-head">
-                <div class="name list-column">Name</div>
-                <div class="email list-column">Email</div>
-                <div class="status list-column">Status</div>
-                <div class="role list-column">Role</div>
-                <div class="last-login list-column">Last Login</div>
-                <div class="permission list-column">Permission</div>
-                <div class="option list-column"></div>
+                <div className="user-list-head">
+                <div className="name list-column">Name</div>
+                <div className="email list-column">Email</div>
+                <div className="status list-column">Status</div>
+                <div className="role list-column">Role</div>
+                <div className="last-login list-column">Last Login</div>
+                <div className="permission list-column">Permission</div>
+                <div className="option list-column"></div>
                 </div>
                 <div id="user-list-items">
                 {userList}

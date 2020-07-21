@@ -399,7 +399,7 @@ body{
 
 #new-user-div{
     display: block;
-    width: 70%;
+    width: 60%;
     transition: visibility 0s, opacity 0.5s linear;
 }
 
