@@ -118,6 +118,9 @@ class Users extends React.Component{
                 </div>);
             })
 
+            userList= this.state.usersList.length===0? <div className="user-list-item"><div className="name list-column"><i className="flaticon-user"></i>No Users Found</div></div>: userList;
+            
+
             console.log("rendering");
             
             return(
