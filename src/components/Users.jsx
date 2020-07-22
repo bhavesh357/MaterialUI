@@ -4,11 +4,11 @@ import NewUserForm from './NewUserForm';
 class Users extends React.Component{
     constructor(props){
         super(props);
-        this.state=({
+        this.state={
             isAddingUser: false,
             usersList: this.props.userList,
             updatedUsersList: this.props.userList,
-        });
+        };
         this.addNewUser= this.addNewUser.bind(this);
     }
     
@@ -81,7 +81,8 @@ class Users extends React.Component{
         });
     }
     
-    addNewUser(){
+    addNewUser(name){
+        console.log(name);
         if(this.validateForm()){
             var User={
                 id:this.state.usersList.length+1,
@@ -98,11 +99,12 @@ class Users extends React.Component{
                 usersList: newList,
                 updatedUsersList: newList,
             });
+            this.addNewUserToggle();
         }
     }
     
     render(){
-        var userList= this.props.userList.map(user => {
+        var userList= this.state.usersList.map(user => {
             var status=user.status===("Active") ? <button onClick={() => {console.log("toggleStatus");} } className="status-button status-active">{user.status}</button>:<button onClick={() => {console.log("toggleStatus(i)");}} className="status-button status-inactive">{user.status}</button>;
             return (
                 <div key={user.id} className="user-list-item">

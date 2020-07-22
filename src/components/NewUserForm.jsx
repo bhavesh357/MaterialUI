@@ -3,7 +3,8 @@ import React from 'react';
 class NewUserForm extends React.Component{
 
     handleClick(e){
-        this.props.newUserForm();
+        var name=document.getElementById("new-name").value;
+        this.props.newUserForm(name);
     }
 
     render() {
