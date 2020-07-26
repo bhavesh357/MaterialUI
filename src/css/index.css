@@ -565,5 +565,16 @@ body{
     .content-desc{
         width: 80%;
     }
+    .tile-group{
+        width: 90%;
+        margin: 3em auto;
+        padding: 0em 1em;
+        flex-direction: column;
+    }
+
+    .tile{
+        width: 90%;
+        margin: 1em auto;
+    }
 }
 
