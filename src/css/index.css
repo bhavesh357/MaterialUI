@@ -577,6 +577,83 @@ body{
         margin: 1em auto;
     }
 
+    
+    #user-search{
+        width: 100%;
+    }
+
+    #user-list-details{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .user-list-head{
+        flex-direction: column;
+        border-right: #dddddd 1px solid;
+        border-left: #dddddd 1px solid;
+        border-top: #dddddd 1px solid;
+    }
+
+    .list-column{
+        border-bottom: #dddddd 1px solid;
+        display: flex;
+        align-items: center;
+        width:auto;
+        padding-right: 0.5em;
+    }
+
+    #user-list-items{
+        display: flex;
+        flex-direction: row;
+        overflow-y: scroll;
+    }
+
+    .user-list-item{
+        padding: 0em 0em;
+        flex-direction: column;
+    }
+
+    
+    
+    .name{
+        min-height: 3em;
+        align-items: center;
+    }
+    
+    .name i::before{
+        font-size: 1em;
+    }
+    
+    .email{
+        min-height: 3em;
+    }
+    
+    .status{
+        min-height: 3em;
+    }
+    
+    .status-button{
+        font-size: 0.75em;
+        padding: 0em 0.25em;
+        width: auto;
+    }
+    
+    .role{
+        min-height: 3em;
+    }
+    
+    .permission{
+        min-height: 3em;
+    }
+
+    .last-login{
+        min-height: 3em;
+    }
+
+    .option{
+        justify-content: start;
+    }
+
     .footer{
         width: 90vw;
     }
