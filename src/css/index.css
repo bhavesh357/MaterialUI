@@ -577,6 +577,9 @@ body{
         margin: 1em auto;
     }
 
+    #new-user-div{
+        width: 100%;
+    }
     
     #user-search{
         width: 100%;
