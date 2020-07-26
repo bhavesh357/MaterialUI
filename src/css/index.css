@@ -558,3 +558,12 @@ body{
     border: none;
 }
 
+@media (max-width:576px){
+    #center-content{
+        width: 100vw;
+    }
+    .content-desc{
+        width: 80%;
+    }
+}
+
